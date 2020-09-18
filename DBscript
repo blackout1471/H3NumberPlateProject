@@ -1,0 +1,15 @@
+Create table StolenNumberPlates(
+id int IDENTITY(1,1),
+numberplate varchar(11),
+PRIMARY KEY (id)
+);
+
+Create table NumberplateLocations(
+id int IDENTITY(1,1),
+nid int,
+xlocation float,
+ylocation float,
+timeSpotted datetime,
+FOREIGN KEY (nid) REFERENCES StolenNumberPlates(id),
+PRIMARY KEY (id)
+);
