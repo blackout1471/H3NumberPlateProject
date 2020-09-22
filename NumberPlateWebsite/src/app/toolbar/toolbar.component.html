@@ -1,9 +1,9 @@
-<div class="d-flex bd-highlight shadow-sm p-3 mb-5 bg-white rounded">
-	<div class="p-2 flex-fill">Logo</div>
+<div class="d-flex bd-highlight shadow p-3 mb-5 bg-white rounded">
+	<div class="p-2 flex-fill"><a routerLink="/front">Logo</a></div>
 	<div class="p-2 flex-fill">
 		<a href="https://www.google.dk" target="_blank">Download App</a>
 	</div>
 	<div class="p-2 flex-fill">
-		<input type="text" class="form-control" placeholder="Søg Nummerplade..." >
+		<input type="text" class="form-control" placeholder="Søg Nummerplade..." (keyup.enter)="onEnterKey($event)" >
 	</div>
 </div>

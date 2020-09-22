@@ -16,11 +16,18 @@
 }
 
 .img-zoom-text-center {
-	position: absolute;
-	
+  position: absolute;
+  color: white;
+  top: 40%;
+  left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .img-zoom-title-center {
-	position: absolute;
-	
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  top: 8%;
+  left: 50%;
+	transform: translate(-50%, -50%);
 }
