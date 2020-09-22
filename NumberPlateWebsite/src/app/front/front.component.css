@@ -1,0 +1,26 @@
+.img-hover-zoom {
+  height: 300px; /* Modify this according to your need */
+  overflow: hidden; /* Removing this will break the effects */
+}
+
+.img-hover-zoom--blur img {
+  transition: transform 1s, filter 2s ease-in-out;
+  filter: blur(2px);
+  transform: scale(1.2);
+}
+
+/* The Transformation */
+.img-hover-zoom--blur:hover img {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.img-zoom-text-center {
+	position: absolute;
+	
+}
+
+.img-zoom-title-center {
+	position: absolute;
+	
+}
