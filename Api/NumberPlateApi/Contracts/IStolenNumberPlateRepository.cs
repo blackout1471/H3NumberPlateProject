@@ -9,7 +9,6 @@ namespace NumberPlateApi.Contracts
     public interface IStolenNumberPlateRepository
     {
         public void AddStolenNumberPlate(StolenNumberPlate stolenNumberPlate);
-
         public void RemoveStolenNumberPlate(StolenNumberPlate stolenNumberPlate);
         public StolenNumberPlate FindStolenNumberPlateByNumber(string numberPlateNumber);
     }

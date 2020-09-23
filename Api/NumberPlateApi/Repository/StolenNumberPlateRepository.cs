@@ -15,6 +15,7 @@ namespace NumberPlateApi.Repository
         {
 
         }
+
         public void AddStolenNumberPlate(StolenNumberPlate stolenNumberPlate)
         {
             Create(stolenNumberPlate);
@@ -24,12 +25,10 @@ namespace NumberPlateApi.Repository
         {
             Delete(stolenNumberPlate);
         }
-
         public StolenNumberPlate FindStolenNumberPlateByNumber(string numberPlateNumber)
         {
             return FindByCondition(plate => plate.NumberPlateNumber.Equals(numberPlateNumber)).FirstOrDefault();
         }
-
     }
 }
 
