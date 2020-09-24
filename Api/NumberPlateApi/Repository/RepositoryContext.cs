@@ -14,5 +14,6 @@ namespace NumberPlateApi.Repository
 
         }
         public DbSet<StolenNumberPlate> StolenNumberPlates { get; set; }
+        public DbSet<NumberPlateLocations> NumberPlateLocations { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace NumberPlateApi.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
+        [StringLength(11, ErrorMessage = "Numberplate number can't be longer than 11 characters")]
         [Column("numberplate")]
         public string NumberPlateNumber { get; set; }
     }

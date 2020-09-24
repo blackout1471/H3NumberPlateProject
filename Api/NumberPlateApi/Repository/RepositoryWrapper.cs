@@ -10,6 +10,7 @@ namespace NumberPlateApi.Repository
     {
         private RepositoryContext repositoryContext;
         private IStolenNumberPlateRepository stolenNumberPlate;
+        private INumberPlateLocationsRepository numberPlateLocations;
 
         public RepositoryWrapper(RepositoryContext repositoryContext)
         {
@@ -25,6 +26,17 @@ namespace NumberPlateApi.Repository
                     stolenNumberPlate = new StolenNumberPlateRepository(repositoryContext);
                 }
                 return stolenNumberPlate;
+            }
+        }
+        public INumberPlateLocationsRepository NumberPlateLocations
+        {
+            get
+            {
+                if (numberPlateLocations == null)
+                {
+                    numberPlateLocations = new NumberPlateLocationsRepository(repositoryContext);
+                }
+                return numberPlateLocations;
             }
         }
 

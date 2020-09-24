@@ -21,30 +21,7 @@ namespace NumberPlateApi.Controllers
             this.repositoryWrapper = repositoryWrapper;
         }
 
-        [HttpGet("{numberPlate}", Name = "FindStolenNumberPlateByNumber")]
-        public IActionResult GetStolenNumberPlateByNumber(string numberPlate)
-        {
-            try
-            {
-                var returnPlate = repositoryWrapper.StolenNumberPlate.FindStolenNumberPlateByNumber(numberPlate);
-                if (returnPlate == null)
-                {
-                    logger.LogError($"Numberplate with number: {returnPlate}, wasn't found in the database");
-                    return NotFound();
-                }
-                else
-                {
-                    logger.LogInfo($"Numberplate with number: {numberPlate}, was found and returned");
-                    return Ok(returnPlate);
-                }
 
-            }
-            catch (Exception ex)
-            {
-                logger.LogError($"Something went wrong inside GetStolenNumberPlateByNumber action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
-        }
         [HttpPost]
         public IActionResult AddNumberPlate([FromBody] StolenNumberPlate numberPlate)
         {
@@ -61,12 +38,14 @@ namespace NumberPlateApi.Controllers
 
                     return BadRequest("Invalid numberplate object");
                 }
-
-                repositoryWrapper.StolenNumberPlate.AddStolenNumberPlate(numberPlate);
-                repositoryWrapper.Save();
-
-
-                return CreatedAtAction("AddStolenNumberPlate", numberPlate);
+                var exists = repositoryWrapper.StolenNumberPlate.FindStolenNumberPlateByNumber(numberPlate.NumberPlateNumber);
+                if (exists.NumberPlateNumber == null)
+                {
+                    repositoryWrapper.StolenNumberPlate.AddStolenNumberPlate(numberPlate);
+                    repositoryWrapper.Save();
+                    return CreatedAtAction("AddStolenNumberPlate", numberPlate);
+                }
+                return BadRequest("Numberplate already exists");
             }
             catch (Exception ex)
             {

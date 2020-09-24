@@ -8,6 +8,7 @@ namespace NumberPlateApi.Contracts
     public interface IRepositoryWrapper
     {
         IStolenNumberPlateRepository StolenNumberPlate { get; }
+        INumberPlateLocationsRepository NumberPlateLocations { get; }
 
         void Save();
     }
