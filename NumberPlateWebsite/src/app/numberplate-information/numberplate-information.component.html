@@ -2,8 +2,8 @@
     <h4>Numberplate</h4>
     <div class="d-flex min-height-container">
         <div class="flex-fill border mr-2">
-            <div>Sidst Set:</div>
-            <div>Lokation:</div>
+            <div>Sidst Set: {{numberPlate.LastSeen}}</div>
+            <div>Sidste Lokation: {{numberPlate.Location}}</div>
         </div>
         <div class="flex-fill border ml-2">
             <agm-map [latitude]="lat" [longitude]="lng" class="map-size">
