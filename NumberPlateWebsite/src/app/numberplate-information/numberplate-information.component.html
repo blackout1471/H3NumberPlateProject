@@ -1,9 +1,11 @@
-<div class="container-fluid">
-    <h4>Numberplate</h4>
+<div *ngIf="numberPlateExists; else elseBlock" class="container-fluid">
+  <h4>Nummerplade: {{numberPlateGui}}</h4>
     <div class="d-flex min-height-container">
-        <div class="flex-fill border mr-2">
-            <div>Sidst Set: {{numberPlate.LastSeen}}</div>
-            <div>Sidste Lokation: {{numberPlate.Location}}</div>
+        <div class="flex-fill border mr-2 text-center">
+          <br />
+          <div>Sidst Set: {{numberPlate.getLatestLocation().getSeen()}}</div>
+          <br/>
+          <div>Sidste Lokation: {{latestLocationName}}</div>
         </div>
         <div class="flex-fill border ml-2">
             <agm-map [latitude]="lat" [longitude]="lng" class="map-size">
@@ -12,3 +14,9 @@
         </div>
     </div>
 </div>
+
+<ng-template #elseBlock>
+  <div class="container-fluid text-center">
+    <h4>Fejl. Kunne ikke finde nummerplade</h4>
+  </div>
+</ng-template>
