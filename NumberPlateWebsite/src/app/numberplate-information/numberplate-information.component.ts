@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NumberplateModel } from '../models/NumberplateModel';
 import { NumberPlateLocationApiService } from '../number-plate-location-api.service';
 import { GeoApiService } from '../geo-api.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-numberplate-information',
@@ -21,10 +22,11 @@ export class NumberplateInformationComponent implements OnInit {
   // Models
   numberPlate: NumberplateModel;
 
-  constructor(private service: NumberPlateLocationApiService, private geo: GeoApiService, private route: ActivatedRoute)
+  constructor(private service: NumberPlateLocationApiService, private geo: GeoApiService, private route: ActivatedRoute, private titleservice: Title)
   {
     this.numberPlate = new NumberplateModel();
     this.latestLocationName = "";
+    this.titleservice.setTitle("Nummer Plade Information");
   }
 
   ngOnInit(): void {

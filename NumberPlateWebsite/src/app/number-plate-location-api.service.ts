@@ -10,7 +10,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class NumberPlateLocationApiService {
 
-  apiUrl: string = "http://projektdns.westeurope.cloudapp.azure.com/api";
+  apiUrl: string = "http://projektdns.westeurope.cloudapp.azure.com:81/api";
 
   constructor(private client: HttpClient) { }
 
