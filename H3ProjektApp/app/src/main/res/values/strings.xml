@@ -4,4 +4,24 @@
     <string name="post_request_side">Post Request</string>
     <string name="post">Post</string>
     <string name="get">Get</string>
+
+    <string name="input_text_field">Skriv nummerplade her</string>
+    <string name="number_plate_field">Nummerplade</string>
+    <string name="activity_2">Activity 2</string>
+
+    <string name="number_string">Nummerplade</string>
+    <string name="stolen_string">Stjålet</string>
+    <string name="model_string">Model</string>
+    <string name="type_string">Art</string>
+    <string name="mark_string">Mærke</string>
+    <string name="lastSeen_string">Sidst set</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string name="settings_title_string">Settings</string>
+    <string name="latitude_string">Latitude</string>
+    <string name="longtitude_string">Longtitude</string>
+    <string name="city_string">City</string>
+
+
+    <string name="Camera">Camera</string>
 </resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApiActivity">
+
+    <TextView
+        android:id="@+id/stolenText"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="148dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/StolenView"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="148dp"
+        android:text="@string/stolen_string"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lastSeenText"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="368dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lastSeenView"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="368dp"
+        android:text="@string/lastSeen_string"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plateText"
+        android:layout_width="125dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="36dp"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/pl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

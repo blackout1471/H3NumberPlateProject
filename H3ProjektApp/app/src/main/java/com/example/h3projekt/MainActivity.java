@@ -4,48 +4,87 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements ApiWatcher {
+public class MainActivity extends AppCompatActivity {
 
-    ApiCall apiCaller;
+    String numberPlate;
+
+    ImageButton btn;
+    EditText plate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        apiCaller = new ApiCall();
-        apiCaller.addListener(this);
-        final Button button = findViewById(R.id.GetButton);
-        final Button button2 = findViewById(R.id.PostButton);
 
-        addOnClick(button);
-        addOnClick(button2);
-    }
+        btn = (ImageButton) findViewById(R.id.searchButton);
+        plate = (EditText) findViewById(R.id.numberPlateText);
 
-    void addOnClick(Button btn){
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonClicked(v);
+            }
+        });
 
-                ButtonClick(v);
+        final ImageButton btn2 = (ImageButton) findViewById(R.id.settingsButton);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSettingsAcivity();
+            }
+        });
+
+        final Button btn3 = (Button) findViewById(R.id.cameraButton);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showNumberPlateActivity();
             }
         });
     }
 
-    void ButtonClick(View view){
-        Log.d("button_click", "button has been clicked");
-        final TextView textView = findViewById(R.id.textView);
-        textView.setText("Clicked");
+    void buttonClicked(View v){
+        numberPlate = plate.getText().toString();
 
-        if(view.getId() == R.id.GetButton)
-            apiCaller.call(MainActivity.this);
-        else
-            apiCaller.post(MainActivity.this);
+        //showToast(numberPlate);
+
+        showApiAcivity();
+    }
+
+    void showSettingsAcivity(){
+        Intent intent = new Intent(this, SettingsActivity.class);
+        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
+        startActivity(intent);
+    }
+
+    void showNumberPlateActivity(){
+        Intent intent = new Intent(this, NumberPlateRecognitionActivity.class);
+        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
+        startActivity(intent);
+    }
+
+
+
+    void showApiAcivity(){
+        Intent intent = new Intent(this, ApiActivity.class);
+        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
+
+        intent.putExtra("PlateNumber", numberPlate);
+        startActivity(intent);
+    }
+
+    void showToast(String text){
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
     }
 
     void ShowAlert(String message){
@@ -66,8 +105,4 @@ public class MainActivity extends AppCompatActivity implements ApiWatcher {
         alert11.show();
     }
 
-    @Override
-    public void onApiResponse(String response) {
-        ShowAlert(response);
-    }
 }

@@ -6,14 +6,17 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,22 +37,29 @@ public class ApiCall {
         watchers.remove(watcher);
     }
 
-    public void call(Context context){
-        String url = "https://jsonplaceholder.typicode.com/todos/1";
+    public void call(Context context,final String number){
+        String url = "http://projektdns.westeurope.cloudapp.azure.com/api/NumberPlateLocations/" + number;
         RequestQueue queue = Volley.newRequestQueue(context);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        JsonArrayRequest  jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+
 
                     @Override
-                    public void onResponse(JSONObject response) {
-                        for (ApiWatcher watcher : watchers){
-                            String title = null;
-                            try {
-                                title = response.getString("title");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                    public void onResponse(JSONArray response) {
+                        try {
+                            JSONObject obj = response.getJSONObject(response.length() - 1);
+
+                            //plate = new NumberPlate("a", response.getDouble("xLocation"), response.getDouble("yLocation"));
+                            //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
+                            NumberPlate plate = new NumberPlate(number, obj.getDouble("xLocation"), obj.getDouble("yLocation"));
+                            //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
+
+                            for (ApiWatcher watcher : watchers){
+                                watcher.onApiResponse(plate);
                             }
-                            watcher.onApiResponse(title);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -58,8 +68,13 @@ public class ApiCall {
                     public void onErrorResponse(VolleyError error) {
                         // TODO: Handle error
                         for (ApiWatcher watcher : watchers){
-                            watcher.onApiResponse(error.getMessage());
+                            int errorCode = error.networkResponse.statusCode;
+                            if(errorCode == 404)
+                                watcher.onApiError("Number plate doesn't exists");
+                            else
+                                watcher.onApiError("Error with service");
                         }
+
                     }
                 });
         queue.add(jsonObjectRequest);
@@ -73,14 +88,14 @@ public class ApiCall {
             @Override
             public void onResponse(String response) {
                 for (ApiWatcher watcher : watchers){
-                    watcher.onApiResponse(response);
+                    //watcher.onApiResponse(response);
                 }
             }
     }, new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
             for (ApiWatcher watcher : watchers){
-                watcher.onApiResponse(error.getMessage());
+                //watcher.onApiResponse(error.getMessage());
             }        }
     }){
 //This is how you will send the data to API
