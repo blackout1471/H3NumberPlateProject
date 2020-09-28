@@ -21,7 +21,11 @@ namespace NumberPlateApi.Controllers
             this.repositoryWrapper = repositoryWrapper;
         }
 
-
+        /// <summary>
+        /// Adds a StolenNumberPlate object to the database from body
+        /// </summary>
+        /// <param name="numberPlate">StolenNumberPlate object from body</param>
+        /// <returns>The numberplate object added to the database in a json format</returns>
         [HttpPost]
         public IActionResult AddNumberPlate([FromBody] StolenNumberPlate numberPlate)
         {
@@ -39,7 +43,7 @@ namespace NumberPlateApi.Controllers
                     return BadRequest("Invalid numberplate object");
                 }
                 var exists = repositoryWrapper.StolenNumberPlate.FindStolenNumberPlateByNumber(numberPlate.NumberPlateNumber);
-                if (exists.NumberPlateNumber == null)
+                if (exists == null)
                 {
                     repositoryWrapper.StolenNumberPlate.AddStolenNumberPlate(numberPlate);
                     repositoryWrapper.Save();
@@ -53,6 +57,11 @@ namespace NumberPlateApi.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
+        /// <summary>
+        /// Deletes a numberplate from the database where the parameter matches the numberplate number
+        /// </summary>
+        /// <param name="numberPlate">numberplate number in string format</param>
+        /// <returns>No content</returns>
         [HttpDelete("{numberPlate}", Name = "DeleteNumberPlateByNumber")]
         public IActionResult RemoveNumberPlate(string numberPlate)
         {

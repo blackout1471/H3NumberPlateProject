@@ -9,7 +9,17 @@ id int IDENTITY(1,1),
 nid int,
 xlocation float NOT NULL,
 ylocation float NOT NULL,
-timeSpotted datetime NOT NULL,
-FOREIGN KEY (nid) REFERENCES StolenNumberPlates(id),
+timeSpotted datetime,
+FOREIGN KEY (nid) REFERENCES StolenNumberPlates(id) ON DELETE CASCADE,
 PRIMARY KEY (id)
 );
+
+CREATE TRIGGER INSERT_Time ON NumberPlateLocations
+AFTER INSERT
+AS BEGIN
+    UPDATE NumberPlateLocations
+        SET timeSpotted = GETDATE()
+        FROM NumberPlateLocations n JOIN
+             Inserted i
+             ON n.id = i.id;
+END;

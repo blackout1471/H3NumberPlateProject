@@ -21,7 +21,7 @@ namespace NumberPlateApi.Models
         [Column("ylocation")]
         public double YLocation { get; set; }
         [Column("timespotted")]
-        public string TimeSpotted { get; set; }
+        public DateTime TimeSpotted { get; set; }
 
     }
 }

@@ -15,6 +15,7 @@ namespace NumberPlateApi.Repository
 
         public void AddStolenNumberPlate(NumberPlateLocations numberPlate)
         {
+
             Create(numberPlate);
         }
 

@@ -23,6 +23,11 @@ namespace NumberPlateApi.Controllers
             this.repositoryWrapper = repositoryWrapper;
         }
 
+        /// <summary>
+        /// Gets a numberplate from database where the parameter matches the numberplate number
+        /// </summary>
+        /// <param name="numberPlate">A numberplate number given in string format</param>
+        /// <returns>A NumberPlateLocation object in Json format</returns>
         [HttpGet("{numberPlate}", Name = "FindStolenNumberPlateByNumber")]
         public IActionResult GetStolenNumberPlateByNumber(string numberPlate)
         {
@@ -49,10 +54,14 @@ namespace NumberPlateApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Adds a numberplatelocations object to the database from body
+        /// </summary>
+        /// <param name="numberPlate">NumberplateDTO from body</param>
+        /// <returns>The numberplate object added to the database in a json format</returns>
         [HttpPost]
         public IActionResult AddNumberPlateLocation([FromBody] NumberPlateDTO numberPlate)
         {
-
             try
             {
                 var plateId = repositoryWrapper.StolenNumberPlate.FindStolenNumberPlateByNumber(numberPlate.NumberPlateNumber).Id;
