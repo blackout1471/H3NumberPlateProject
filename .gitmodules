@@ -1,0 +1,3 @@
+[submodule "raspberry/includes/openalpr"]
+	path = raspberry/includes/openalpr
+	url = https://github.com/openalpr/openalpr.git
