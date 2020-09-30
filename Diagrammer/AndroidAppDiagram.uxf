@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>184</y>
+      <w>288</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>SettingsActivity
+-
+_-TAG : String_
+-mBluetoothAdapter : BluetoothAdapter
+btnEnableDisable_Discoverable : Button
+-mBluetoothConnection : BluetoothConnection
+-btnStartConnection : Button
+-btnSend : Button 
+-etSend : EditText
+_-MY_UUID : UUID
+-mBTDevice : BluetoothDevice
++mBTDevices : ArrayList&lt;BluetoothDevice&gt;
++mDeviceListAdapter : DeviceListAdapter
+-lvNewDevices : ListView 
+-
+#onCreate(Bundle) : void 
+-BroadcastReceiver() : void
+#onDestroy() : void
++startConnection() : void 	
++startBtConnection() : void
++enableDisableBT() : void
++btnEnableDisable_Discoverable() : void
++btnDiscover : void
+-checkBTPermissions() : void
++onItemClick(AdaptherView&lt;?&gt;, View, int, long) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>184</y>
+      <w>232</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>ApiActivity
+--
+-caller : ApiCall
+-view : TextView;
+--
+#onCreate(Bundle) : void
+-setPlateText(NumberPlate) : void
+-formatDouble(Double) : Double
+-setView(int, String) : void
+-getCityFromXAndY(Double,Double) : string
+-showAlert(String) : void
+-showToast(String) : void
+
++onApiReponse(Numberplate) : void
++onApiError(String) : void
++onApiPost(String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>416</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ApiCall
+--
+-watchers : ArrayList&lt;ApiWatcher&gt;;
+--
++addListener(ApiWatcher) : void
++removeListener(ApiWatcher) : void
+
++call(Context, String) : void
++checkIfStolen(Context, String) : Boolean
++post(Context, String, Double, Double) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>584</y>
+      <w>192</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>NumberPlate
+-
+-stolen : Boolean 
+-number : String
+-xLoc : Double
+-yLoc : Double 
+-
++getStolen() : Boolean
++getNumber() : String
++getXLoc() : Double
++getYLoc() : Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>800</y>
+      <w>248</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>ConnectThread
+-
+-mmSocket : BluetoothSocket
+-
++ConnectThread(BluetoothSocket, UUID) : void
++run() : void
++cancel() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>16</y>
+      <w>200</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ApiWatcher
+-
+
+-
++onApiResponse(NumberPlate) : void
++onApiError(String) : void
++onApiPost(String) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>528</y>
+      <w>264</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>BluetoothConnection
+-
+_+tag : String_
+_+appName : String_
+_+MY_UUID : UUID_
+-mBluetoothAdapter : BluetoothAdapter
+-context : Context
+-mInsecureAcceptThread : AcceptThread
+-mConnectThread : ConnectThread
+-mmDevice : BluetoothDevice
+-deviceUUID : UUID
+-mConnectedThread : ConnectedThread
+-
++BluetoothConnection(Context) : void
++start() : void
++startClient(BluetoothDevice, UUID) : void
+-connected(Bluetoothsocket, BluetoothDevice) : void
++write(byte[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>800</y>
+      <w>224</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>AcceptThread
+-
+-mmServerSocket : BluetoothServerSocket
+-
++run() : void
++cancel() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>872</x>
+      <y>184</y>
+      <w>360</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>DeviceListAdapter
+-
+-mLayoutInflater : LayoutInflater
+-mDevices : ArrayList&lt;BluetoothDevice&gt;
+-mViewResourceId : int
+-
++DeviceListAdapter(Context, int, ArrayList&lt;BluetoothDevices&gt;) : void
++getView(int, View, ViewGroup) : View
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>88</x>
+      <y>184</y>
+      <w>192</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>MainActivity
+-
+-numberPlate : String
+-btn : ImageButton
+-plate : EditText
+-
+#onCreate(Bundle) : void 
+-buttonClicked(View) : void
+-showSettingsActivity() : void
+-showNumberPlateActivity() : void
+-showApiActivity() : void
+
+-showToast(String) : void
+-showAlert(String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>104</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>384</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>552</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>752</y>
+      <w>72</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>752</y>
+      <w>72</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>496</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>184</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>
