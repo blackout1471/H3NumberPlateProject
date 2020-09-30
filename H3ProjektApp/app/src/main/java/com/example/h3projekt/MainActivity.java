@@ -14,7 +14,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+
+public class MainActivity extends AppCompatActivity implements ApiWatcher {
 
     String numberPlate;
 
@@ -51,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 showNumberPlateActivity();
             }
         });
+
+        ApiCall call = new ApiCall();
+        call.addListener(this);
+
+        call.checkIfStolen(MainActivity.this, "546bbag21ee100007");
+
+
     }
 
     void buttonClicked(View v){
@@ -105,4 +116,18 @@ public class MainActivity extends AppCompatActivity {
         alert11.show();
     }
 
+    @Override
+    public void onApiResponse(NumberPlate response) {
+
+    }
+
+    @Override
+    public void onApiError(String message) {
+        ShowAlert(message);
+    }
+
+    @Override
+    public void onApiPost(String message) {
+        ShowAlert(message);
+    }
 }
