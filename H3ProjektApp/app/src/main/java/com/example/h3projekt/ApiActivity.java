@@ -70,6 +70,10 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
         setView(R.id.lastSeenText, "Error");
     }
 
+    @Override
+    public void onApiPost(String message) {
+    }
+
     String getCityFromXandY(Double xPos,Double yPos){
 
         Geocoder geoCoder = new Geocoder(ApiActivity.this, Locale.ENGLISH);

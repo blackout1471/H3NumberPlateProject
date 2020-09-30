@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,9 +21,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class ApiCall {
 
@@ -38,7 +46,7 @@ public class ApiCall {
     }
 
     public void call(Context context,final String number){
-        String url = "http://projektdns.westeurope.cloudapp.azure.com/api/NumberPlateLocations/" + number;
+        String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/" + number;
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest  jsonObjectRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
@@ -80,34 +88,79 @@ public class ApiCall {
         queue.add(jsonObjectRequest);
     }
 
+    public boolean checkIfStolen(Context context, final String numberPlate) {
+        /*
+        String url = "https://data4.nummerplade.net/efterlyst.php?stelnr="+numberPlate;
+        RequestQueue queue = Volley.newRequestQueue(context);
+        JsonObjectRequest  jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        for (ApiWatcher watcher : watchers){
+                            //watcher.onApiPost("response: " + response);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        for (ApiWatcher watcher : watchers){
+                            //watcher.onApiError("Error: " +  error);
+                        }
+
+                    }
+                });
+        queue.add(jsonObjectRequest);
+        */
+
+        return false;
+    }
+
 
     public void post(Context context){
-        String url = "https://httpbin.org/post";
+        String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/";
 
-        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        JSONObject js = new JSONObject();
+        try {
+            js.put("NumberPlateNumber", "abcde");
+            js.put("xLocation", "55.442");
+            js.put("yLocation","11.786");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        // Make request for JSONObject
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(
+                Request.Method.POST, url, js,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                       for (ApiWatcher _watcher : watchers){
+                           _watcher.onApiPost(response.toString());
+                       }
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onResponse(String response) {
-                for (ApiWatcher watcher : watchers){
-                    //watcher.onApiResponse(response);
+            public void onErrorResponse(VolleyError error) {
+                for (ApiWatcher _watcher : watchers){
+                    _watcher.onApiPost(error.getMessage());
                 }
             }
-    }, new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            for (ApiWatcher watcher : watchers){
-                //watcher.onApiResponse(error.getMessage());
-            }        }
-    }){
-//This is how you will send the data to API
-        @Override
-        protected Map<String, String> getParams(){
-            Map<String,String> map = new HashMap<>();
-            map.put("name", "username");
-            map.put("password","password");
-            return map;
-        }
-    };
-     RequestQueue requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(request);
+        }) {
+
+            /**
+             * Passing some request headers
+             */
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+
+        };
+        Volley.newRequestQueue(context).add(jsonObjReq);
     }
 }
