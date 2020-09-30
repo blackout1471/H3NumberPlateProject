@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>210</y>
+      <w>350</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberplateModel
+--
++ Numberplate {+get; +set} : string
++ Locations {+get; -set} : NumberplateLocationModel[]
+--
+- numberplate : string
+- locations : NumberplateLocationModel[]
+--
++ NumberplateModel()
++ AddLocation(location: NumberplateLocationModel)
++ GetLatestLocation() : NumberplateLocationModel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>10</y>
+      <w>260</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberplateLocationModel
+--
++ X {+get; +set} : float
++ Y {+get; +set} : float
++ TimeSeen {+get; +set} : Date
+--
+- x : float
+- y : float
+- timeSeen : Date
+--
++ NumberplateLocationModel()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>160</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>410</y>
+      <w>480</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberPlateLocationApiService
+--
+- apiUrl : string
+--
++ NumberPlateLocationApiService(client : HttpClient)
++ GetNumberPlate(numberplate: string) : Observable&lt;T&gt;
+--
+- ExtractNumberplateData(response : HttpResponse) : NumberplateModel
+- HandleError(response : HttpErrorResponse) : Exception&lt;T&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>410</y>
+      <w>480</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>GeoApiService
+--
+- apiUrl : string
+--
++ GeoApiService(client : HttpClient)
++ GetLocation(x:float, y:float) : Observable&lt;T&gt;
+--
+- extractLocation(response : HttpResponse) : string
+- HandleError(response : HttpErrorResponse) : Exception&lt;T&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>360</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
