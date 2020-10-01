@@ -4,46 +4,6 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>360</y>
-      <w>150</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>SettingsActivity
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>420</x>
-      <y>360</y>
-      <w>150</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>ApiActivity
---
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>260</x>
-      <y>360</y>
-      <w>110</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>MainActivity
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>810</x>
       <y>360</y>
       <w>120</w>
