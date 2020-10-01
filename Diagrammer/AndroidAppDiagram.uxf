@@ -90,7 +90,7 @@ _-MY_UUID : UUID
       <x>304</x>
       <y>584</y>
       <w>192</w>
-      <h>136</h>
+      <h>176</h>
     </coordinates>
     <panel_attributes>NumberPlate
 -
@@ -98,11 +98,14 @@ _-MY_UUID : UUID
 -number : String
 -xLoc : Double
 -yLoc : Double 
+-timeSpotted : String
 -
++NumberPlate(String, Double, Double, String)
 +getStolen() : Boolean
 +getNumber() : String
 +getXLoc() : Double
-+getYLoc() : Double</panel_attributes>
++getYLoc() : Double
++getTimeSpotted : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
