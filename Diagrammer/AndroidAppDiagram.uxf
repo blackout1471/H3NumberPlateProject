@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>182</y>
-      <w>252</w>
-      <h>280</h>
+      <x>720</x>
+      <y>252</y>
+      <w>432</w>
+      <h>480</h>
     </coordinates>
     <panel_attributes>SettingsActivity
 -
@@ -40,10 +40,10 @@ _-MY_UUID : UUID
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>182</y>
-      <w>203</w>
-      <h>182</h>
+      <x>360</x>
+      <y>252</y>
+      <w>348</w>
+      <h>312</h>
     </coordinates>
     <panel_attributes>ApiActivity
 --
@@ -67,10 +67,10 @@ _-MY_UUID : UUID
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>385</y>
-      <w>203</w>
-      <h>126</h>
+      <x>360</x>
+      <y>600</y>
+      <w>348</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>ApiCall
 --
@@ -87,10 +87,10 @@ _-MY_UUID : UUID
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>532</y>
-      <w>168</w>
-      <h>154</h>
+      <x>384</x>
+      <y>852</y>
+      <w>288</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>NumberPlate
 -
@@ -111,10 +111,10 @@ _-MY_UUID : UUID
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>434</x>
-      <y>721</y>
-      <w>217</w>
-      <h>77</h>
+      <x>552</x>
+      <y>1176</y>
+      <w>372</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>ConnectThread
 -
@@ -129,10 +129,10 @@ _-MY_UUID : UUID
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>343</x>
-      <y>35</y>
-      <w>175</w>
-      <h>84</h>
+      <x>396</x>
+      <y>0</y>
+      <w>300</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 ApiWatcher
@@ -147,10 +147,10 @@ ApiWatcher
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
-      <y>483</y>
-      <w>231</w>
-      <h>203</h>
+      <x>732</x>
+      <y>768</y>
+      <w>396</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>BluetoothConnection
 -
@@ -175,15 +175,16 @@ _+MY_UUID : UUID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>679</x>
-      <y>721</y>
-      <w>196</w>
-      <h>77</h>
+      <x>972</x>
+      <y>1176</y>
+      <w>336</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>AcceptThread
 -
 -mmServerSocket : BluetoothServerSocket
 -
++AcceptThread(BluetoothDevice
 +run() : void
 +cancel() : void</panel_attributes>
     <additional_attributes/>
@@ -191,10 +192,10 @@ _+MY_UUID : UUID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>833</x>
-      <y>182</y>
-      <w>315</w>
-      <h>91</h>
+      <x>1236</x>
+      <y>252</y>
+      <w>540</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>DeviceListAdapter
 -
@@ -210,10 +211,10 @@ _+MY_UUID : UUID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>112</x>
-      <y>182</y>
-      <w>168</w>
-      <h>154</h>
+      <x>0</x>
+      <y>252</y>
+      <w>288</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>MainActivity
 -
@@ -235,10 +236,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>413</x>
-      <y>112</y>
-      <w>21</w>
-      <h>84</h>
+      <x>516</x>
+      <y>132</y>
+      <w>36</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
@@ -246,10 +247,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>413</x>
-      <y>357</y>
-      <w>21</w>
-      <h>42</h>
+      <x>516</x>
+      <y>552</y>
+      <w>36</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -257,10 +258,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>413</x>
-      <y>504</y>
-      <w>21</w>
-      <h>42</h>
+      <x>516</x>
+      <y>804</y>
+      <w>36</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -268,10 +269,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>539</x>
-      <y>679</y>
-      <w>63</w>
-      <h>56</h>
+      <x>732</x>
+      <y>1104</y>
+      <w>108</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;60.0</additional_attributes>
@@ -279,10 +280,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
-      <y>679</y>
-      <w>63</w>
-      <h>56</h>
+      <x>984</x>
+      <y>1104</y>
+      <w>108</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;60.0</additional_attributes>
@@ -290,10 +291,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>637</x>
-      <y>455</y>
-      <w>21</w>
-      <h>42</h>
+      <x>900</x>
+      <y>720</y>
+      <w>36</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -301,10 +302,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>777</x>
-      <y>182</y>
-      <w>70</w>
-      <h>21</h>
+      <x>1140</x>
+      <y>252</y>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
@@ -312,10 +313,10 @@ _+MY_UUID : UUID_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>287</x>
-      <y>42</y>
-      <w>70</w>
-      <h>364</h>
+      <x>300</x>
+      <y>12</y>
+      <w>120</w>
+      <h>624</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;.</panel_attributes>
     <additional_attributes>80.0;10.0;10.0;10.0;10.0;500.0;50.0;500.0</additional_attributes>
@@ -323,10 +324,10 @@ _+MY_UUID : UUID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>868</y>
-      <w>168</w>
-      <h>42</h>
+      <x>780</x>
+      <y>1428</y>
+      <w>288</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>fontsize=36
 Thead
@@ -336,10 +337,10 @@ Thead
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>791</y>
-      <w>133</w>
-      <h>91</h>
+      <x>924</x>
+      <y>1296</y>
+      <w>228</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 Extends</panel_attributes>
@@ -348,10 +349,10 @@ Extends</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>532</x>
-      <y>791</y>
-      <w>140</w>
-      <h>91</h>
+      <x>720</x>
+      <y>1296</y>
+      <w>240</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 Extends</panel_attributes>
