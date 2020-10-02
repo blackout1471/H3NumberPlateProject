@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>360</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>NumberPlate
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -14,6 +14,7 @@
     <string name="model_string">Model</string>
     <string name="type_string">Art</string>
     <string name="mark_string">Mærke</string>
+    <string name="location_string">Location</string>
     <string name="lastSeen_string">Sidst set</string>
     <string name="title_activity_settings">SettingsActivity</string>
 

@@ -39,13 +39,19 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
     void setPlateText(NumberPlate plate){
         setView(R.id.stolenText, "Ja");
         setView(R.id.plateText, plate.getNumber());
-        setView(R.id.lastSeenText, getCityFromXandY(formatDouble(plate.getxLoc()), formatDouble(plate.getyLoc())));
+        setView(R.id.locationView, getCityFromXandY(formatDouble(plate.getxLoc()), formatDouble(plate.getyLoc())));
+        setView(R.id.lastSeenView_, formatString(plate.getTimeSpotted()));
     }
 
     Double formatDouble(Double num){
         DecimalFormat df = new DecimalFormat("#.######");
         //ShowAlert(df.format(num));
         return Double.valueOf(df.format(num));
+    }
+
+    String formatString(String str){
+        str = str.replace('T', ' ');
+        return str;
     }
 
     TextView view;
@@ -67,7 +73,7 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
     public void onApiError(String message) {
         setView(R.id.numberPlateText, message);
         setView(R.id.plateText, "Error");
-        setView(R.id.lastSeenText, "Error");
+        setView(R.id.locationView, "Error");
     }
 
     @Override

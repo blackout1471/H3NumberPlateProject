@@ -59,7 +59,7 @@ public class ApiCall {
 
                             //plate = new NumberPlate("a", response.getDouble("xLocation"), response.getDouble("yLocation"));
                             //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
-                            NumberPlate plate = new NumberPlate(number, obj.getDouble("xLocation"), obj.getDouble("yLocation"));
+                            NumberPlate plate = new NumberPlate(number, obj.getDouble("xLocation"), obj.getDouble("yLocation"), obj.getString("timeSpotted"));
                             //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
 
                             for (ApiWatcher watcher : watchers){
