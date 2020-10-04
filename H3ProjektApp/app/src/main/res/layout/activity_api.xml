@@ -39,7 +39,7 @@
         android:layout_width="130dp"
         android:layout_height="70dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="60dp"
         android:text="Indlæser"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -49,25 +49,25 @@
         app:layout_constraintTop_toBottomOf="@+id/stolenText" />
 
     <TextView
-        android:id="@+id/locationText"
-        android:layout_width="130dp"
-        android:layout_height="70dp"
+        android:id="@+id/lastSeenView_"
+        android:layout_width="141dp"
+        android:layout_height="121dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="96dp"
-        android:text="@string/location_string"
+        android:layout_marginTop="44dp"
+        android:text="Indlæser"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="33sp"
         app:autoSizeTextType="none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StolenView" />
+        app:layout_constraintStart_toEndOf="@+id/lastSeenText"
+        app:layout_constraintTop_toBottomOf="@+id/locationView" />
 
     <TextView
         android:id="@+id/lastSeenText"
         android:layout_width="130dp"
         android:layout_height="70dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
         android:text="@string/lastSeen_string"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -77,18 +77,18 @@
         app:layout_constraintTop_toBottomOf="@+id/locationText" />
 
     <TextView
-        android:id="@+id/lastSeenView_"
-        android:layout_width="141dp"
-        android:layout_height="121dp"
+        android:id="@+id/locationText"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="52dp"
-        android:text="Indlæser"
+        android:layout_marginTop="60dp"
+        android:text="@string/location_string"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="33sp"
         app:autoSizeTextType="none"
-        app:layout_constraintStart_toEndOf="@+id/lastSeenText"
-        app:layout_constraintTop_toBottomOf="@+id/locationView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StolenView" />
 
     <TextView
         android:id="@+id/plateText"

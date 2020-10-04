@@ -72,6 +72,8 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
 
     ListView lvNewDevices;
 
+    Boolean registeredReciever = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,15 +174,16 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
         }
     };
 
-
-
     @Override
     protected void onDestroy() {
         Log.d(TAG, "onDestroy: called.");
         super.onDestroy();
-        unregisterReceiver(mBroadcastReceiver3);
+        if(registeredReciever == true)
+            unregisterReceiver(mBroadcastReceiver3);
         unregisterReceiver(mBroadcastReceiver4);
-        mBluetoothAdapter.cancelDiscovery();
+
+        if(mBluetoothAdapter != null)
+            mBluetoothAdapter.cancelDiscovery();
     }
 
     //create method for starting connection
@@ -198,8 +201,6 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
         mBluetoothConnection.startClient(device,uuid);
     }
 
-
-
     public void enableDisableBT(){
         if(mBluetoothAdapter == null){
             Log.d(TAG, "enableDisableBT: Does not have BT capabilities.");
@@ -213,9 +214,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
             Log.d(TAG, "enableDisableBT: disabling BT.");
             mBluetoothAdapter.disable();
         }
-
     }
-
 
     public void btnEnableDisable_Discoverable(View view) {
         Log.d(TAG, "btnEnableDisable_Discoverable: Making device discoverable for 300 seconds.");
@@ -238,6 +237,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
             mBluetoothAdapter.startDiscovery();
             IntentFilter discoverDevicesIntent = new IntentFilter(BluetoothDevice.ACTION_FOUND);
             registerReceiver(mBroadcastReceiver3, discoverDevicesIntent);
+            registeredReciever = true;
         }
         if(!mBluetoothAdapter.isDiscovering()){
 
@@ -247,6 +247,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
             mBluetoothAdapter.startDiscovery();
             IntentFilter discoverDevicesIntent = new IntentFilter(BluetoothDevice.ACTION_FOUND);
             registerReceiver(mBroadcastReceiver3, discoverDevicesIntent);
+            registeredReciever = true;
         }
     }
 
@@ -291,23 +292,6 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
             mBTDevice = mBTDevices.get(i);
             mBluetoothConnection = new BluetoothConnection(SettingsActivity.this);
         }
-    }
-    void ShowAlert(String message){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(SettingsActivity.this);
-        builder1.setMessage(message);
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
     }
 }
 

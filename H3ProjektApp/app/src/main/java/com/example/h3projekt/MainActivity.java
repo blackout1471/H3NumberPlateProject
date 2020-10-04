@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 
-public class MainActivity extends AppCompatActivity implements ApiWatcher {
+public class MainActivity extends AppCompatActivity {
 
     String numberPlate;
 
@@ -55,18 +55,10 @@ public class MainActivity extends AppCompatActivity implements ApiWatcher {
                 showNumberPlateActivity();
             }
         });
-
-        ApiCall call = new ApiCall();
-        call.addListener(this);
-
-        call.checkIfStolen(MainActivity.this, "546bbag21ee100007");
-
-
     }
 
     void buttonClicked(View v){
         numberPlate = plate.getText().toString();
-
         //showToast(numberPlate);
 
         showApiAcivity();
@@ -84,50 +76,11 @@ public class MainActivity extends AppCompatActivity implements ApiWatcher {
         startActivity(intent);
     }
 
-
-
     void showApiAcivity(){
         Intent intent = new Intent(this, ApiActivity.class);
         //ApiCallTemp temp = new ApiCallTemp(numberPlate);
 
         intent.putExtra("PlateNumber", numberPlate);
         startActivity(intent);
-    }
-
-    void showToast(String text){
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
-    }
-
-    void ShowAlert(String message){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
-        builder1.setMessage(message);
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-    }
-
-    @Override
-    public void onApiResponse(NumberPlate response) {
-
-    }
-
-    @Override
-    public void onApiError(String message) {
-        ShowAlert(message);
-    }
-
-    @Override
-    public void onApiPost(String message) {
-        ShowAlert(message);
     }
 }

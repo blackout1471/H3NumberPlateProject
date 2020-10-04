@@ -34,18 +34,27 @@ import java.util.Scanner;
 
 public class ApiCall {
 
-    ArrayList<ApiWatcher> watchers = new ArrayList<ApiWatcher>();
+    ArrayList<ApiGetWatchable> getWatchers = new ArrayList<ApiGetWatchable>();
+    ArrayList<ApiPostWatchable> postWatchers = new ArrayList<ApiPostWatchable>();
+
     public ApiCall() {
     }
 
-    public  void addListener(ApiWatcher watcher){
-        watchers.add((watcher));
+    public  void addGetListener(ApiGetWatchable watcher){
+        getWatchers.add(watcher);
     }
-    public  void removeListener(ApiWatcher watcher){
-        watchers.remove(watcher);
+    public  void removeGetListener(ApiGetWatchable watcher){
+        getWatchers.remove(watcher);
     }
 
-    public void call(Context context,final String number){
+    public  void addPostListener(ApiPostWatchable watcher){
+        postWatchers.add(watcher);
+    }
+    public  void removePostGetListener(ApiPostWatchable watcher){
+        postWatchers.remove(watcher);
+    }
+
+    public void getRequest(Context context,final String number){
         String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/" + number;
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest  jsonObjectRequest = new JsonArrayRequest
@@ -62,7 +71,7 @@ public class ApiCall {
                             NumberPlate plate = new NumberPlate(number, obj.getDouble("xLocation"), obj.getDouble("yLocation"), obj.getString("timeSpotted"));
                             //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
 
-                            for (ApiWatcher watcher : watchers){
+                            for (ApiGetWatchable watcher : getWatchers){
                                 watcher.onApiResponse(plate);
                             }
 
@@ -75,7 +84,7 @@ public class ApiCall {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // TODO: Handle error
-                        for (ApiWatcher watcher : watchers){
+                        for (ApiGetWatchable watcher : getWatchers){
                             int errorCode = error.networkResponse.statusCode;
                             if(errorCode == 404)
                                 watcher.onApiError("Number plate doesn't exists");
@@ -118,7 +127,7 @@ public class ApiCall {
     }
 
 
-    public void post(Context context){
+    public void postRequest(Context context){
         String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/";
 
         JSONObject js = new JSONObject();
@@ -137,14 +146,14 @@ public class ApiCall {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                       for (ApiWatcher _watcher : watchers){
+                       for (ApiPostWatchable _watcher : postWatchers){
                            _watcher.onApiPost(response.toString());
                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                for (ApiWatcher _watcher : watchers){
+                for (ApiPostWatchable _watcher : postWatchers){
                     _watcher.onApiPost(error.getMessage());
                 }
             }

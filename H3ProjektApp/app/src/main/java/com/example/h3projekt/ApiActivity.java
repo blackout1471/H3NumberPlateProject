@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Locale;
 
-public class ApiActivity extends AppCompatActivity implements ApiWatcher {
+public class ApiActivity extends AppCompatActivity implements ApiGetWatchable {
 
 
     ApiCall apiCaller;
@@ -26,14 +26,14 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
         setContentView(R.layout.activity_api);
 
         apiCaller = new ApiCall();
-        apiCaller.addListener(this);
+        apiCaller.addGetListener(this);
 
 
         String plateNumber = getIntent().getStringExtra("PlateNumber");
-        showToast(plateNumber);
+        MessageAlert.getInstance(ApiActivity.this).showToast(plateNumber);
 
 
-        apiCaller.call(ApiActivity.this, plateNumber);
+        apiCaller.getRequest(ApiActivity.this, plateNumber);
     }
 
     void setPlateText(NumberPlate plate){
@@ -60,10 +60,6 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
         view.setText(text);
     }
 
-    void showToast(String text){
-        Toast.makeText(ApiActivity.this, text, Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     public void onApiResponse(NumberPlate response) {
         setPlateText(response);
@@ -74,10 +70,6 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
         setView(R.id.numberPlateText, message);
         setView(R.id.plateText, "Error");
         setView(R.id.locationView, "Error");
-    }
-
-    @Override
-    public void onApiPost(String message) {
     }
 
     String getCityFromXandY(Double xPos,Double yPos){
@@ -96,29 +88,13 @@ public class ApiActivity extends AppCompatActivity implements ApiWatcher {
 
         } catch (IOException e) {
             // Handle IOException
-            showToast(e.getMessage());
+            MessageAlert.getInstance(ApiActivity.this).showToast(e.getMessage());
         } catch (NullPointerException e) {
-            showToast(e.getMessage());
+            MessageAlert.getInstance(ApiActivity.this).showToast(e.getMessage());
             // Handle NullPointerException
         }
         return "Could not find position";
     }
 
-    void ShowAlert(String message){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(ApiActivity.this);
-        builder1.setMessage(message);
-        builder1.setCancelable(true);
 
-        builder1.setPositiveButton(
-                "Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-    }
 }
