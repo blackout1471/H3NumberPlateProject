@@ -8,15 +8,12 @@ import android.widget.Toast;
 public class MessageAlert {
 
     private static MessageAlert instance;
-    private static Context context;
 
     private  MessageAlert(){
 
     }
 
-    public static MessageAlert getInstance(Context _context) {
-        context = _context;
-
+    public static MessageAlert getInstance() {
         if(instance == null){
             instance = new MessageAlert();
         }
@@ -24,11 +21,11 @@ public class MessageAlert {
         return instance;
     }
 
-    public void showToast(String text){
+    public void showToast(Context context, String text){
         Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 
-    public void ShowAlert(String message){
+    public void ShowAlert(Context context, String message){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(message);
         builder1.setCancelable(true);

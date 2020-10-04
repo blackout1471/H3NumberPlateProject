@@ -30,7 +30,7 @@ public class ApiActivity extends AppCompatActivity implements ApiGetWatchable {
 
 
         String plateNumber = getIntent().getStringExtra("PlateNumber");
-        MessageAlert.getInstance(ApiActivity.this).showToast(plateNumber);
+        MessageAlert.getInstance().showToast(ApiActivity.this, plateNumber);
 
 
         apiCaller.getRequest(ApiActivity.this, plateNumber);
@@ -88,9 +88,9 @@ public class ApiActivity extends AppCompatActivity implements ApiGetWatchable {
 
         } catch (IOException e) {
             // Handle IOException
-            MessageAlert.getInstance(ApiActivity.this).showToast(e.getMessage());
+            MessageAlert.getInstance().showToast(ApiActivity.this, e.getMessage());
         } catch (NullPointerException e) {
-            MessageAlert.getInstance(ApiActivity.this).showToast(e.getMessage());
+            MessageAlert.getInstance().showToast(ApiActivity.this, e.getMessage());
             // Handle NullPointerException
         }
         return "Could not find position";
