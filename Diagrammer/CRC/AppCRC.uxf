@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>17</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>272</x>
-      <y>238</y>
-      <w>374</w>
-      <h>255</h>
+      <x>54</x>
+      <y>333</y>
+      <w>198</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>NumberPlate
 -
@@ -17,10 +17,10 @@
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>272</x>
-      <y>289</y>
-      <w>205</w>
-      <h>324</h>
+      <x>54</x>
+      <y>360</y>
+      <w>109</w>
+      <h>172</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -50,15 +50,165 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>476</x>
-      <y>289</y>
-      <w>171</w>
-      <h>324</h>
+      <x>162</x>
+      <y>360</y>
+      <w>91</w>
+      <h>172</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
 ApiCall</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>333</y>
+      <w>234</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>BluetoothConnection
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>387</x>
+      <y>360</y>
+      <w>127</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+SettingsActivity</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>279</x>
+      <y>360</y>
+      <w>109</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+tag
+appName
+my_uuid
+bluetoothAdapter
+context
+deviceUUID
+connectedThread</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>333</y>
+      <w>234</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ConnectedThread
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>630</x>
+      <y>360</y>
+      <w>127</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+BluetoothConnection</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>522</x>
+      <y>360</y>
+      <w>109</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+socket
+inStream
+outStream</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //

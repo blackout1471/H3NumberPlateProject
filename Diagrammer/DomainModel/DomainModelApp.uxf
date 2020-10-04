@@ -4,12 +4,36 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>360</y>
+      <x>120</x>
+      <y>390</y>
       <w>120</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>NumberPlate
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>390</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ConnectedThread
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>390</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>BluetoothConnection
 -</panel_attributes>
     <additional_attributes/>
   </element>
