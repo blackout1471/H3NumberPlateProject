@@ -8,12 +8,15 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+// Class for calling an extern api to get stolen numberplates
 export class NumberPlateLocationApiService {
 
   apiUrl: string = "http://projektdns.westeurope.cloudapp.azure.com:81/api";
 
   constructor(private client: HttpClient) { }
 
+  // Extracts the numberplate data from json object
   private extractNumerplateData(res: any[]): NumberplateModel {
     let model = new NumberplateModel();
     res.forEach(curModel => {
@@ -29,6 +32,7 @@ export class NumberPlateLocationApiService {
     return model;
   }
 
+  // Handles the error thrown
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -43,6 +47,7 @@ export class NumberPlateLocationApiService {
     return throwError(error);
   }
 
+  // Gets the numberplate, given from a string of text
   public GetNumberPlate(numberplate: string): Observable<any> {
     return this.client.get(`${this.apiUrl}/numberplatelocations/${numberplate}`).
       pipe(

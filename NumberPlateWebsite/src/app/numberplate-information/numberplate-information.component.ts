@@ -13,10 +13,19 @@ import { Title } from '@angular/platform-browser';
 })
 export class NumberplateInformationComponent implements OnInit {
 
+  // The string holds the latest location name, used in the gui
   latestLocationName: string;
+
+  // The text of the numberplate used in gui
   numberPlateGui: string = "";
+
+  // The latitude used by google maps
   lat: number = 51.678418;
+
+  // The langitude used by google maps
   lng: number = 7.809007;
+
+  // Whether the numberplate exists or not
   numberPlateExists: boolean = false;
 
   // Models
@@ -29,8 +38,10 @@ export class NumberplateInformationComponent implements OnInit {
     this.titleservice.setTitle("Nummer Plade Information");
   }
 
+  // Begin fetching the numberplate tjhat was given in the url
   ngOnInit(): void {
     let plateNumber: string;
+
     this.route.params.subscribe(params => {
       plateNumber = params['id'];
       this.numberPlate.setNumberplate(plateNumber);
@@ -40,6 +51,7 @@ export class NumberplateInformationComponent implements OnInit {
     });
   }
 
+  // Fetches the numberplate data given from the id in the url link
   private fetchNumberplateData() {
     this.service.GetNumberPlate(this.numberPlate.getNumberplate())
       .subscribe(
@@ -55,11 +67,13 @@ export class NumberplateInformationComponent implements OnInit {
       );
   }
 
+  // Fetches the name for the location that was fetched
   private getNameLocation() {
     this.geo.GetLocation(this.numberPlate.getLatestLocation().getX(), this.numberPlate.getLatestLocation().getY())
       .subscribe(res => this.latestLocationName = res);
   }
 
+  // Sets the map location in the gui
   private setMapLocation(lat: number, long: number) {
     this.lat = lat;
     this.lng = long;

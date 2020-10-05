@@ -6,10 +6,14 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service class for getting the name of the of a location
+// From the x and y location or longitude and langitude
 export class GeoApiService {
 
   apiUrl = "http://open.mapquestapi.com/geocoding/v1/reverse?key=m4Z4gFHItGwP9FW5IuHCfeMpcVWUdWq5&";
 
+  // Extracts the data from the json data, from api call
   private extractLocation(res: any[]): string {
     let location = "";
     location = res['results'][0]['locations'][0]['street'];
@@ -19,6 +23,7 @@ export class GeoApiService {
     return location;
   }
 
+  // Handles the error thrown
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -35,6 +40,7 @@ export class GeoApiService {
 
   constructor(private client: HttpClient) { }
 
+  // Gets name of a location from given x and y
   public GetLocation(x: number, y: number) {
     return this.client.get(`${this.apiUrl}location=${x},${y}`).
       pipe(
