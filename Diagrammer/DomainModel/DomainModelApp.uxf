@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>390</y>
+      <x>180</x>
+      <y>540</y>
       <w>120</w>
       <h>80</h>
     </coordinates>
@@ -16,9 +16,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
-      <y>390</y>
-      <w>160</w>
+      <x>330</x>
+      <y>540</y>
+      <w>150</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>ConnectedThread
@@ -28,13 +28,108 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>390</y>
+      <x>320</x>
+      <y>380</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>BluetoothConnection
 -</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>380</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ApiCall
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>200</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ApiPostWatchable
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>200</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ApiGetWatchable
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>450</y>
+      <w>70</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+creates</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>270</y>
+      <w>130</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>270</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+implements</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>450</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1
+has</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

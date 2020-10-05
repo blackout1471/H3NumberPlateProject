@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>11</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>88</x>
-      <y>308</y>
-      <w>242</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>NumberPlate
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
+  <zoom_level>8</zoom_level>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>88</x>
-      <y>341</y>
-      <w>133</w>
-      <h>210</h>
+      <x>168</x>
+      <y>1000</y>
+      <w>89</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -50,10 +37,10 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>374</x>
-      <y>341</y>
-      <w>111</w>
-      <h>210</h>
+      <x>144</x>
+      <y>728</y>
+      <w>81</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -78,30 +65,19 @@ for(String textline : textlines) {
 }</custom_code>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>693</x>
-      <y>308</y>
-      <w>286</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>BluetoothConnection
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>825</x>
-      <y>341</y>
-      <w>155</w>
-      <h>210</h>
+      <x>432</x>
+      <y>1000</y>
+      <w>97</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-ConnectedThread</panel_attributes>
+socket
+inStream
+outStream</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -122,10 +98,305 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>693</x>
-      <y>341</y>
-      <w>133</w>
-      <h>210</h>
+      <x>240</x>
+      <y>728</y>
+      <w>105</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+NumberPlate
+ApiGetWatchable
+ApiPostWatchable</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>480</x>
+      <y>424</y>
+      <w>81</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>88</x>
+      <y>488</y>
+      <w>97</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+onApiResponse
+onApiError
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>0</y>
+      <w>176</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ApiGetWatchable
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>280</x>
+      <y>488</y>
+      <w>97</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+onApiPost</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>976</y>
+      <w>160</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>NumberPlate
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>976</y>
+      <w>168</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>ConnectedThread
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>704</y>
+      <w>208</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>BluetoothConnection
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>704</y>
+      <w>208</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>ApiCall
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>464</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ApiPostWatchable
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>88</x>
+      <y>464</y>
+      <w>176</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ApiGetWatchable
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>864</y>
+      <w>64</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+creates</panel_attributes>
+    <additional_attributes>12.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>576</y>
+      <w>120</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+implements</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>576</y>
+      <w>128</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+implements</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>856</y>
+      <w>40</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1
+has</panel_attributes>
+    <additional_attributes>13.0;150.0;10.0;12.0</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>520</x>
+      <y>728</y>
+      <w>97</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+onApiResponse
+onApiError
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>416</x>
+      <y>728</y>
+      <w>97</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -155,30 +426,17 @@ for(String textline : textlines) {
 }</custom_code>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>990</x>
-      <y>308</y>
-      <w>286</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>ConnectedThread
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>1122</x>
-      <y>341</y>
-      <w>155</w>
-      <h>210</h>
+      <x>144</x>
+      <y>24</y>
+      <w>112</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-</panel_attributes>
+ConnectedThread</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -195,253 +453,5 @@ int y=textHeight();
 for(String textline : textlines) {
 	y += printCenter(textline,y);
 }</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>990</x>
-      <y>341</y>
-      <w>133</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-socket
-inStream
-outStream</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>374</x>
-      <y>308</y>
-      <w>286</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>ApiCall
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>506</x>
-      <y>341</y>
-      <w>144</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-NumberPlate
-ApiGetWatchable
-ApiPostWatchable</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>209</x>
-      <y>341</y>
-      <w>111</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>550</x>
-      <y>561</y>
-      <w>111</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>429</x>
-      <y>561</y>
-      <w>133</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-onApiResponse
-onApiError
-</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>429</x>
-      <y>539</y>
-      <w>242</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>ApiGetWatchable
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>803</x>
-      <y>561</y>
-      <w>111</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>693</x>
-      <y>561</y>
-      <w>133</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-onApiPost</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>682</x>
-      <y>539</y>
-      <w>242</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>ApiPostWatchable
--
-</panel_attributes>
-    <additional_attributes/>
   </element>
 </diagram>

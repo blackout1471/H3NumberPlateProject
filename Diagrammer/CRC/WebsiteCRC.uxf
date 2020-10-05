@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>14</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>210</x>
-      <y>252</y>
-      <w>364</w>
-      <h>210</h>
-    </coordinates>
-    <panel_attributes>NumberplateLocationModel
--
-</panel_attributes>
-    <additional_attributes/>
-  </element>
+  <zoom_level>10</zoom_level>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>210</x>
-      <y>294</y>
-      <w>169</w>
-      <h>267</h>
+      <x>120</x>
+      <y>50</y>
+      <w>121</w>
+      <h>191</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -48,10 +35,10 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>378</x>
-      <y>294</y>
-      <w>183</w>
-      <h>267</h>
+      <x>710</x>
+      <y>280</y>
+      <w>131</w>
+      <h>191</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -77,10 +64,10 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>770</x>
-      <y>294</y>
-      <w>295</w>
-      <h>267</h>
+      <x>200</x>
+      <y>300</y>
+      <w>211</w>
+      <h>191</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -106,10 +93,101 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>602</x>
-      <y>294</y>
-      <w>169</w>
-      <h>267</h>
+      <x>400</x>
+      <y>530</y>
+      <w>121</w>
+      <h>191</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+
+apiUrl</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>270</y>
+      <w>320</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberplateModel
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>20</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberplateLocationModel
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>170</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>500</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>NumberPlateLocationApiService
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>500</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>GeoApiService
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>80</x>
+      <y>300</y>
+      <w>121</w>
+      <h>191</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -135,16 +213,76 @@ for(String textline : textlines) {
 }</custom_code>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>602</x>
-      <y>252</y>
-      <w>476</w>
-      <h>210</h>
+      <x>210</x>
+      <y>420</y>
+      <w>50</w>
+      <h>100</h>
     </coordinates>
-    <panel_attributes>NumberplateModel
--
-</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>230</x>
+      <y>530</y>
+      <w>121</w>
+      <h>191</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+
+NumberplateModel</panel_attributes>
     <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>120</x>
+      <y>530</y>
+      <w>121</w>
+      <h>191</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+
+apiUrl</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
   </element>
 </diagram>
