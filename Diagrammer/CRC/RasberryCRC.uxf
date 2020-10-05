@@ -33,35 +33,6 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>152</x>
-      <y>24</y>
-      <w>105</w>
-      <h>153</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-Recognizer</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
       <x>592</x>
       <y>256</y>
       <w>145</w>
@@ -70,7 +41,7 @@ for(String textline : textlines) {
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-SmartRecognizerController</panel_attributes>
+ClientData</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -131,8 +102,7 @@ for(String textline : textlines) {
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-BluetoothHandler
-SmartRecognizerController</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -258,8 +228,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>128</x>
-      <y>480</y>
+      <x>144</x>
+      <y>472</y>
       <w>32</w>
       <h>112</h>
     </coordinates>
@@ -267,7 +237,7 @@ m2=1
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>12.0;126.0;12.0;16.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -377,7 +347,7 @@ m2=1
 // observe the element preview.
 
 
-SmartRecognizerController</panel_attributes>
+RecognizedData</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -428,15 +398,15 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>168</x>
-      <y>616</y>
+      <x>160</x>
+      <y>432</y>
       <w>97</w>
       <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-CameraModule</panel_attributes>
+ImageData</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -457,47 +427,17 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>112</x>
-      <y>432</y>
-      <w>153</w>
-      <h>153</h>
-    </coordinates>
-    <panel_attributes>// Modify the text below and
-// observe the element preview.
-
-SmartRecognizerController</panel_attributes>
-    <additional_attributes/>
-    <custom_code>//Modify the code below to define the element's behavior.
-//
-//Example:  Change the line
-//  y += printCenter(textline,y);
-//to
-//  y += 2*printCenter(textline,y);
-//and observe the element preview.
-
-int y=textHeight();
-
-//drawRectangle(0,0,width,height);
-
-for(String textline : textlines) {
-	y += printCenter(textline,y);
-}</custom_code>
-  </element>
-  <element>
-    <type>CustomElementImpl</type>
-    <coordinates>
-      <x>376</x>
-      <y>600</y>
+      <x>496</x>
+      <y>584</y>
       <w>113</w>
       <h>153</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
-
-plateRecognizer
-camera
-clientHandler
-timeBeforeDataSen</panel_attributes>
+CameraModule
+Recognizer
+BluetoothHandler
+ClientData</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -529,6 +469,38 @@ for(String textline : textlines) {
 
 deviceId
 socketId</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to define the element's behavior.
+//
+//Example:  Change the line
+//  y += printCenter(textline,y);
+//to
+//  y += 2*printCenter(textline,y);
+//and observe the element preview.
+
+int y=textHeight();
+
+//drawRectangle(0,0,width,height);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>368</x>
+      <y>584</y>
+      <w>113</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+plateRecognizer
+camera
+clientHandler
+timeBeforeDataSen</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
