@@ -56,7 +56,7 @@ for(String textline : textlines) {
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-NumberplateModel</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
@@ -85,7 +85,7 @@ for(String textline : textlines) {
     <panel_attributes>// Modify the text below and
 // observe the element preview.
 
-NumberPlateLocationApiService</panel_attributes>
+NumberPlateLocationModel</panel_attributes>
     <additional_attributes/>
     <custom_code>//Modify the code below to define the element's behavior.
 //
