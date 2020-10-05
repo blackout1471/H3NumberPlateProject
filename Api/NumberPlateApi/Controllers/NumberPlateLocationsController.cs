@@ -10,6 +10,9 @@ using NumberPlateApi.Models;
 
 namespace NumberPlateApi.Controllers
 {
+    /// <summary>
+    /// The numberplate location controller is used to make number plate locations http calls
+    /// </summary>
     [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
     [ApiController]
     public class NumberPlateLocationsController : ControllerBase

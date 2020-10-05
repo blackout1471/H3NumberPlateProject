@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace NumberPlateApi.Contracts
 {
+    /// <summary>
+    /// Interface for the the logger management class
+    /// </summary>
     public interface ILoggerManager
     {
         void LogInfo(string message);

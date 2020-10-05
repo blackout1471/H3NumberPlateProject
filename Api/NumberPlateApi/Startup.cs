@@ -11,6 +11,7 @@ using System;
 using System.IO;
 using NumberPlateApi.Extensions;
 using NumberPlateApi.Repository;
+using NumberPlateApi.Contracts;
 
 namespace NumberPlateApi
 {

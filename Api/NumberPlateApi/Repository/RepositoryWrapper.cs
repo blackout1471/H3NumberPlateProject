@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NumberPlateApi.Repository
 {
+    /// <summary>
+    /// This class holds the different implementations as singleton instances
+    /// </summary>
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private RepositoryContext repositoryContext;
@@ -17,6 +20,9 @@ namespace NumberPlateApi.Repository
             this.repositoryContext = repositoryContext;
         }
 
+        /// <summary>
+        /// The stolen Numberplate Implementation
+        /// </summary>
         public IStolenNumberPlateRepository StolenNumberPlate
         {
             get
@@ -28,6 +34,10 @@ namespace NumberPlateApi.Repository
                 return stolenNumberPlate;
             }
         }
+
+        /// <summary>
+        /// The Numberplate locations implementation
+        /// </summary>
         public INumberPlateLocationsRepository NumberPlateLocations
         {
             get

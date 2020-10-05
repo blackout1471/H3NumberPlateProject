@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace NumberPlateApi.Contracts
 {
+    /// <summary>
+    /// The base for the repository pattern
+    /// This is used in all implementations before the controller
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepositoryBase<T>
     {
         IQueryable<T> FindAll();

@@ -9,6 +9,9 @@ using NumberPlateApi.Models;
 
 namespace NumberPlateApi.Controllers
 {
+    /// <summary>
+    /// The numberplate controller which can be called from http calls
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class NumberPlateController : ControllerBase
