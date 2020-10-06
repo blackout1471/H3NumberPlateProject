@@ -38,5 +38,9 @@ int main() {
 	// Close device
 	handler->CloseDevice();
 
+	// Deallocate memory objects
+	delete handler;
+	delete engine;
+
 	return 0;
 }

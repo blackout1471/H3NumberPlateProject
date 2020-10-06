@@ -22,7 +22,7 @@ export class NumberplateInformationComponent implements OnInit {
   // The latitude used by google maps
   lat: number = 51.678418;
 
-  // The langitude used by google maps
+  // The longitude used by google maps
   lng: number = 7.809007;
 
   // Whether the numberplate exists or not
@@ -31,7 +31,10 @@ export class NumberplateInformationComponent implements OnInit {
   // Models
   numberPlate: NumberplateModel;
 
-  constructor(private service: NumberPlateLocationApiService, private geo: GeoApiService, private route: ActivatedRoute, private titleservice: Title)
+  constructor(private service: NumberPlateLocationApiService, 
+    private geo: GeoApiService, 
+    private route: ActivatedRoute, 
+    private titleservice: Title)
   {
     this.numberPlate = new NumberplateModel();
     this.latestLocationName = "";
