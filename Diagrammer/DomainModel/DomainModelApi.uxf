@@ -9,7 +9,7 @@
       <w>171</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>StolenNumberPlate
+    <panel_attributes>Numberplate
 -
 </panel_attributes>
     <additional_attributes/>
@@ -17,25 +17,27 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
+      <x>603</x>
       <y>522</y>
       <w>162</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>NumberPlateLocation
--</panel_attributes>
+    <panel_attributes>NumberPlate Location
+-
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>621</x>
-      <y>522</y>
-      <w>162</w>
-      <h>72</h>
+      <x>405</x>
+      <y>549</y>
+      <w>216</w>
+      <h>36</h>
     </coordinates>
-    <panel_attributes>NumberPlateDTO
--</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
   </element>
 </diagram>

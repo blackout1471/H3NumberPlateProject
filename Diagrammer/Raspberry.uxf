@@ -66,7 +66,7 @@ bg=orange</panel_attributes>
     <coordinates>
       <x>770</x>
       <y>150</y>
-      <w>300</w>
+      <w>370</w>
       <h>230</h>
     </coordinates>
     <panel_attributes>BluetoothHandler
@@ -206,7 +206,7 @@ m2=1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1
+m2=  1
 </panel_attributes>
     <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
   </element>
@@ -220,7 +220,7 @@ m2=1
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 fg=black
-m1=1
+m1=   1
 m2=1
 </panel_attributes>
     <additional_attributes>10.0;10.0;180.0;240.0</additional_attributes>
