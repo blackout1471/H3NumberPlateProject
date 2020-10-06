@@ -57,6 +57,8 @@ public class ApiCall {
     public void getRequest(Context context,final String number){
         String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/" + number;
         RequestQueue queue = Volley.newRequestQueue(context);
+
+        // Create get request with json array response expected
         JsonArrayRequest  jsonObjectRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 
@@ -64,13 +66,15 @@ public class ApiCall {
                     @Override
                     public void onResponse(JSONArray response) {
                         try {
+
+                            // Get last object in array
+                            // the last object should be the one that has been seen recently
                             JSONObject obj = response.getJSONObject(response.length() - 1);
 
-                            //plate = new NumberPlate("a", response.getDouble("xLocation"), response.getDouble("yLocation"));
-                            //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
+                            // Create numberplate based on the values from the json object
                             NumberPlate plate = new NumberPlate(number, obj.getDouble("xLocation"), obj.getDouble("yLocation"), obj.getString("timeSpotted"));
-                            //NumberPlate plate = new NumberPlate(number, 55.67594, 12.56553);
 
+                            // Send numberplate to observers that are watching get request
                             for (ApiGetWatchable watcher : getWatchers){
                                 watcher.onApiResponse(plate);
                             }
@@ -83,8 +87,13 @@ public class ApiCall {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
+
+                        // Send error message to observers that are watching get request
                         for (ApiGetWatchable watcher : getWatchers){
+
+                            // Get status code of the request
+                            // 404 means that numberplate doesn't exists in database
+                            // other error suggest that there is a problem with api/server
                             int errorCode = error.networkResponse.statusCode;
                             if(errorCode == 404)
                                 watcher.onApiError("Number plate doesn't exists");
@@ -97,6 +106,8 @@ public class ApiCall {
         queue.add(jsonObjectRequest);
     }
 
+    // Checks if numberplate is stolen
+    // Because of lack of time this method is postponed
     public boolean checkIfStolen(Context context, final String numberPlate) {
         /*
         String url = "https://data4.nummerplade.net/efterlyst.php?stelnr="+numberPlate;
@@ -113,7 +124,7 @@ public class ApiCall {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
+
                         for (ApiWatcher watcher : watchers){
                             //watcher.onApiError("Error: " +  error);
                         }
@@ -123,13 +134,14 @@ public class ApiCall {
         queue.add(jsonObjectRequest);
         */
 
-        return false;
+        return true;
     }
 
-
+    // Send post request to api
     public void postRequest(Context context){
         String url = "http://projektdns.westeurope.cloudapp.azure.com:81/api/NumberPlateLocations/";
 
+        // Create json to store data that is send
         JSONObject js = new JSONObject();
         try {
             js.put("NumberPlateNumber", "abcde");
@@ -140,12 +152,14 @@ public class ApiCall {
         }
 
 
-        // Make request for JSONObject
+        // Make post request that sends JSONObject
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
                 Request.Method.POST, url, js,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
+                       // Send response to observers that are watching post request
                        for (ApiPostWatchable _watcher : postWatchers){
                            _watcher.onApiPost(response.toString());
                        }
@@ -159,9 +173,7 @@ public class ApiCall {
             }
         }) {
 
-            /**
-             * Passing some request headers
-             */
+            // Adding headers to post request
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();

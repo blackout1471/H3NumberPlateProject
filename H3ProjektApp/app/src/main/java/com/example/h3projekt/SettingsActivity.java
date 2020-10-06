@@ -48,7 +48,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public class SettingsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
-    //implements LocationListener
+
     private static final String TAG = "SettingsActivity";
 
     BluetoothAdapter mBluetoothAdapter;

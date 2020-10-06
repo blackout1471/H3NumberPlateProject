@@ -59,27 +59,24 @@ public class MainActivity extends AppCompatActivity {
 
     void buttonClicked(View v){
         numberPlate = plate.getText().toString();
-        //showToast(numberPlate);
 
         showApiAcivity();
     }
 
     void showSettingsAcivity(){
         Intent intent = new Intent(this, SettingsActivity.class);
-        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
         startActivity(intent);
     }
 
     void showNumberPlateActivity(){
         Intent intent = new Intent(this, NumberPlateRecognitionActivity.class);
-        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
         startActivity(intent);
     }
 
     void showApiAcivity(){
         Intent intent = new Intent(this, ApiActivity.class);
-        //ApiCallTemp temp = new ApiCallTemp(numberPlate);
 
+        // Send numberplate that was written by the user to api activity
         intent.putExtra("PlateNumber", numberPlate);
         startActivity(intent);
     }

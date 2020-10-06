@@ -21,11 +21,14 @@ public class MessageAlert {
         return instance;
     }
 
+    // Show small box with the message at the bottom of the screen
     public void showToast(Context context, String text){
         Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 
-    public void ShowAlert(Context context, String message){
+    // Shows box with message in the middle of the screen
+    // with ok button to close the box
+    public void showAlert(Context context, String message){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(message);
         builder1.setCancelable(true);

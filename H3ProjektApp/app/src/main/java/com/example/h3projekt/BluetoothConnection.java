@@ -84,7 +84,8 @@ public class BluetoothConnection
 
         // Synchronize a copy of the ConnectedThread
         Log.d(TAG, "write: Write Called.");
-        //perform the write
+        
+        //perform the write to connected device
         mConnectedThread.write(out);
     }
 

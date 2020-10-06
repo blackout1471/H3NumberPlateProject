@@ -37,7 +37,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NumberPlateRecognitionActivity extends AppCompatActivity implements Detector.Processor<TextBlock> {
+public class NumberPlateRecognitionActivity extends AppCompatActivity {
 
     CameraSource cameraSource;
 
@@ -46,82 +46,5 @@ public class NumberPlateRecognitionActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_plate_recognition);
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                == PackageManager.PERMISSION_DENIED){
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 100);
-        }
-
-        createCameraSource(false, false);
-    }
-
-    private void createCameraSource(boolean autoFocus, boolean useFlash) {
-        Context context = getApplicationContext();
-
-        // TODO: Create the TextRecognizer
-        TextRecognizer textRecognizer = new TextRecognizer.Builder(context).build();
-        textRecognizer.setProcessor(this);
-
-        // TODO: Check if the TextRecognizer is operational.
-        if (!textRecognizer.isOperational()) {
-
-            // Check for low storage.  If there is low storage, the native library will not be
-            // downloaded, so detection will not become operational.
-            IntentFilter lowstorageFilter = new IntentFilter(Intent.ACTION_DEVICE_STORAGE_LOW);
-            boolean hasLowStorage = registerReceiver(null, lowstorageFilter) != null;
-
-            if (hasLowStorage) {
-                Toast.makeText(this, "Low Storage", Toast.LENGTH_LONG).show();
-
-            }
-        }
-
-
-        // TODO: Set the TextRecognizer's Processor.
-        cameraSource =
-                new CameraSource.Builder(getApplicationContext(), textRecognizer)
-                        .setFacing(CameraSource.CAMERA_FACING_BACK)
-                        .setRequestedPreviewSize(1280, 1024)
-                        .setRequestedFps(15.0f)
-                        //.setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
-                        //.setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO : null)
-                        .build();
-
-        // TODO: Create the mCameraSource using the TextRecognizer.
-    }
-
-    void ShowAlert(String message){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(NumberPlateRecognitionActivity.this);
-        builder1.setMessage(message);
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-    }
-
-    @Override
-    public void release() {
-
-    }
-
-    @Override
-    public void receiveDetections(Detector.Detections<TextBlock> detections) {
-
-        SparseArray<TextBlock> items = detections.getDetectedItems();
-        for (int i = 0; i < items.size(); ++i) {
-            TextBlock item = items.valueAt(i);
-            if (item != null && item.getValue() != null) {
-                Log.d("Processor", "Text detected! " + item.getValue());
-                ShowAlert("Text detected! " + item.getValue());
-            }
-        }
     }
 }
